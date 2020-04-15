@@ -1,17 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: sync-waves
+  name: pre-post-sync
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: sync-waves
+    namespace: pre-post-sync
     server: {{ .Values.spec.destination.server }}
   project: default
   source:
-    path: sync-waves
+    path: pre-post-sync
     repoURL: {{ .Values.spec.source.repoURL }}
     targetRevision: {{ .Values.spec.source.targetRevision }}
   # Sync policy
