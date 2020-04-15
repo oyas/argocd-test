@@ -9,7 +9,7 @@ spec:
   destination:
     namespace: pre-post-sync
     server: {{ .Values.spec.destination.server }}
-  project: default
+  project: ALPHA
   source:
     path: pre-post-sync
     repoURL: {{ .Values.spec.source.repoURL }}
