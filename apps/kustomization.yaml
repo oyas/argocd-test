@@ -1,4 +1,5 @@
 resources:
+- project.yaml
 - kustomize-guestbook.yaml
 - namespaces.yaml
 - pre-post-sync.yaml
