@@ -1,17 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: pre-post-sync
+  name: app
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: pre-post-sync
+    namespace: app
     server: https://kubernetes.default.svc
-  project: alpha
+  project: default
   source:
-    path: pre-post-sync
+    path: app
     repoURL: https://github.com/argoproj/argocd-example-apps
     targetRevision: HEAD
   # Sync policy

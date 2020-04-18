@@ -1,6 +1,6 @@
 resources:
-- project.yaml
-- kustomize-guestbook.yaml
-- namespaces.yaml
-- pre-post-sync.yaml
-- sync-waves.yaml
+- projects/alpha.yaml
+bases:
+- overlays/kustomize-guestbook
+- overlays/pre-post-sync
+- overlays/sync-waves

@@ -1,0 +1,5 @@
+bases:
+- ./../../base
+patches:
+- application.yaml
+nameSuffix: -pre-post-sync

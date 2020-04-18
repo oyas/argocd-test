@@ -1,0 +1,11 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: app
+spec:
+  destination:
+    namespace: ns-sync-waves
+  source:
+    path: sync-waves
+    repoURL: https://github.com/argoproj/argocd-example-apps
+    targetRevision: HEAD
