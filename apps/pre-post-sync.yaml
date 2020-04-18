@@ -9,7 +9,7 @@ spec:
   destination:
     namespace: pre-post-sync
     server: https://kubernetes.default.svc
-  project: ALPHA
+  project: alpha
   source:
     path: pre-post-sync
     repoURL: https://github.com/argoproj/argocd-example-apps
