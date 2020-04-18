@@ -1,19 +1,19 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: pre-post-sync
+  name: sync-waves
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: pre-post-sync
-    server: {{ .Values.spec.destination.server }}
-  project: ALPHA
+    namespace: sync-waves
+    server: https://kubernetes.default.svc
+  project: default
   source:
-    path: pre-post-sync
-    repoURL: {{ .Values.spec.source.repoURL }}
-    targetRevision: {{ .Values.spec.source.targetRevision }}
+    path: sync-waves
+    repoURL: https://github.com/argoproj/argocd-example-apps
+    targetRevision: HEAD
   # Sync policy
   syncPolicy:
     automated:

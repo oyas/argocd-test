@@ -1,19 +1,19 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: kustomize-guestbook
+  name: pre-post-sync
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: kustomize-guestbook
-    server: {{ .Values.spec.destination.server }}
-  project: default
+    namespace: pre-post-sync
+    server: https://kubernetes.default.svc
+  project: ALPHA
   source:
-    path: kustomize-guestbook
-    repoURL: {{ .Values.spec.source.repoURL }}
-    targetRevision: {{ .Values.spec.source.targetRevision }}
+    path: pre-post-sync
+    repoURL: https://github.com/argoproj/argocd-example-apps
+    targetRevision: HEAD
   # Sync policy
   syncPolicy:
     automated:

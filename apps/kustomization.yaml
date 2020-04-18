@@ -1,0 +1,5 @@
+resources:
+- kustomize-guestbook.yaml
+- namespaces.yaml
+- pre-post-sync.yaml
+- sync-waves.yaml
