@@ -1,8 +1,10 @@
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
+# apiVersion: kustomize.config.k8s.io/v1beta1
+# kind: Kustomization
+# resources:
+# - projects/alpha.yaml
+# bases:
+# - overlays/kustomize-guestbook
+# - overlays/pre-post-sync
+# - overlays/sync-waves
 resources:
-- projects/alpha.yaml
-bases:
-- overlays/kustomize-guestbook
-- overlays/pre-post-sync
-- overlays/sync-waves
+- all.yaml

@@ -1,0 +1,102 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "-1"
+  name: ns-kustomize-guestbook
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "-1"
+  name: ns-pre-post-sync
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "-1"
+  name: ns-sync-waves
+---
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: alpha
+  namespace: argocd
+spec:
+  clusterResourceWhitelist:
+  - group: ""
+    kind: Namespace
+  description: Alpha Project
+  destinations:
+  - namespace: '*'
+    server: https://kubernetes.default.svc
+  sourceRepos:
+  - '*'
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+  name: app-kustomize-guestbook
+  namespace: argocd
+spec:
+  destination:
+    namespace: ns-kustomize-guestbook
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: kustomize-guestbook
+    repoURL: https://github.com/argoproj/argocd-example-apps
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    validate: true
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+  name: app-pre-post-sync
+  namespace: argocd
+spec:
+  destination:
+    namespace: ns-pre-post-sync
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: pre-post-sync
+    repoURL: https://github.com/argoproj/argocd-example-apps
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    validate: true
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+  name: app-sync-waves
+  namespace: argocd
+spec:
+  destination:
+    namespace: ns-sync-waves
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: sync-waves
+    repoURL: https://github.com/argoproj/argocd-example-apps
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    validate: true
