@@ -1,5 +1,3 @@
-resources:
-- all.yaml
-# bases:
-# - ./alpha/test/application
-# - ./release/test/application
+bases:
+- ./alpha/test/application
+- ./release/test/application
