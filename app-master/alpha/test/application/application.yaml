@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "-1"
+  name: alpha-test
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+  name: alpha-test
+  namespace: argocd
+spec:
+  destination:
+    namespace: alpha-test
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: app-master/alpha/test/src
+    repoURL: https://github.com/oyas/argocd-test
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    validate: true
