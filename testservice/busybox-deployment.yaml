@@ -14,4 +14,4 @@ spec:
     spec:
       containers:
       - name: buxybox
-        image: buxybox
+        image: library/buxybox
