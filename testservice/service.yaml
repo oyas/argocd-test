@@ -1,12 +1,12 @@
-kind: Service
 apiVersion: v1
+kind: Service
 metadata:
   name: service-echo
 spec:
   selector:
-    deployment: hello
+    deployment: echo
   type: LoadBalancer
   ports:
   - protocol: TCP
-    port: 18080
+    port: 80
     targetPort: 8080

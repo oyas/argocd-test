@@ -4,14 +4,17 @@ metadata:
   name: deployment-echo
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      deployment: echo
   template:
     metadata:
       labels:
-        deployment: hello
+        deployment: echo
     spec:
       containers:
       - name: echo-container
         image: hashicorp/http-echo
-        args: ["-listen=:8080", "-text='hello world'"]
+        args: ["-listen=:8080", "-text='hello world from echo service'"]
         ports:
         - containerPort: 8080
