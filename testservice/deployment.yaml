@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: deployment-echo
   labels:
-    app: nginx
+    app: echo
 spec:
   replicas: 1
   selector:
