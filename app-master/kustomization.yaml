@@ -1,3 +1,4 @@
 bases:
-- ./staging/test/application
-- ./release/test/application
+- staging/test/application
+- staging/common/application
+- release/test/application
