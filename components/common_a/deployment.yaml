@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: deployment-common_a
+  name: deployment-common-a
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: common_a
+      app: common-a
   template:
     metadata:
       labels:
-        app: common_a
+        app: common-a
     spec:
       containers:
       - name: echo-container
