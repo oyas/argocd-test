@@ -3,12 +3,18 @@ kind: Deployment
 metadata:
   name: deployment-echo
 spec:
-  replicas: 2
+  replicas: 1
+  selector:
+    matchLabels:
+      app: service_echo
   template:
+    metadata:
+      labels:
+        app: service_echo
     spec:
       containers:
       - name: echo-container
         image: hashicorp/http-echo
-        args: ["-listen=:8080", "-text=\"hello world from echo service release\""]
+        args: ["-listen=:8080", "-text=hello world from echo service"]
         ports:
         - containerPort: 8080

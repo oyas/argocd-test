@@ -1,5 +1,0 @@
-bases:
-# - github.com/kubernetes-sigs/kustomize/examples/helloWorld
-- github.com/oyas/argocd-test/testservice
-patchesStrategicMerge:
-- deployment.yaml

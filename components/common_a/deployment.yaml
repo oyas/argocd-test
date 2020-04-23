@@ -1,22 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: deployment-echo
-  labels:
-    app: echo
+  name: deployment-common_a
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app-template: http-echo
+      app: common_a
   template:
     metadata:
       labels:
-        app-template: http-echo
+        app: common_a
     spec:
       containers:
       - name: echo-container
         image: hashicorp/http-echo
-        args: ["-listen=:8080", "-text=hello world from echo service"]
+        args: ["-listen=:8080", "-text=hello world from common_a"]
         ports:
         - containerPort: 8080

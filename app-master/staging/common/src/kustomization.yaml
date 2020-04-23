@@ -1,0 +1,2 @@
+bases:
+- github.com/oyas/argocd-test/components/common_a
