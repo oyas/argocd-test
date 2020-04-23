@@ -8,11 +8,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: echo
+      app-template: http-echo
   template:
     metadata:
       labels:
-        app: echo
+        app-template: http-echo
     spec:
       containers:
       - name: echo-container
