@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: buxybox-sleep
+  name: busybox-sleep
 spec:
   containers:
-  - name: buxybox
-    image: buxybox
+  - name: busybox
+    image: busybox
     command: ["sleep", "3600"]
     imagePullPolicy: IfNotPresent
   restartPolicy: Always
