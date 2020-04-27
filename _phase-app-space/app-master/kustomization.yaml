@@ -1,0 +1,4 @@
+bases:
+- staging/test/application
+- staging/common/application
+- release/test/application
