@@ -1,2 +1,5 @@
-resources:
+bases:
+- ../base
+nameSuffix: -staging
+patchesStrategicMerge:
 - application.yaml
