@@ -9,7 +9,7 @@ spec:
   destination:
     namespace: default
     server: https://kubernetes.default.svc
-  project: default
+  project: pf
   source:
     path: app-master/overlays/staging/
     repoURL: https://github.com/oyas/argocd-test

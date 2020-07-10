@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "-1"
+  name: pf
+  namespace: argocd
+spec:
+  # Project description
+  description: Example Project
+
+  # Allow manifests to deploy from any Git repos
+  sourceRepos:
+  - '*'
