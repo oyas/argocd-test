@@ -2,6 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: pf
+  namespace: argocd
 spec:
   destination:
     namespace: pf-alpha-service-echo
