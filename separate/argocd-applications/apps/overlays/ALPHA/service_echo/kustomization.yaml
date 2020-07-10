@@ -1,5 +1,5 @@
 bases:
 - ../../../base
 # nameSuffix: -alpha-service-echo
-patchesStrategicMerge:
-- application.yaml
+# patchesStrategicMerge:
+# - application.yaml
