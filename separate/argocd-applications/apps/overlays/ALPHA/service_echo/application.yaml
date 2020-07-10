@@ -1,0 +1,12 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: pf
+spec:
+  destination:
+    namespace: pf-alpha-service-echo
+  project: default
+  source:
+    path: apps/service_echo/overlays/ALPHA/
+    repoURL: https://github.com/oyas/argocd-test
+    targetRevision: HEAD
