@@ -15,6 +15,6 @@ spec:
       containers:
       - name: echo-container
         image: hashicorp/http-echo
-        args: ["-listen=:8080", "-text=hello world from echo service"]
+        args: ["-listen=:8080", "-text=hello world from echo service of pf"]
         ports:
         - containerPort: 8080
