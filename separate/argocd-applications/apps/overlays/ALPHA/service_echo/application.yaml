@@ -7,6 +7,6 @@ spec:
   destination:
     namespace: pf-alpha-service-echo
   source:
-    path: apps/service_echo/overlays/ALPHA/
+    path: separate/apps/service_echo/overlays/ALPHA/
     repoURL: https://github.com/oyas/argocd-test
     targetRevision: HEAD
