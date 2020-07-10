@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: pf
+  name: pf-alpha-service-echo
 spec:
   destination:
     namespace: pf-alpha-service-echo
